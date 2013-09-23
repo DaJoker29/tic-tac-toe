@@ -28,3 +28,36 @@ Play the first possible move that you can
 >6. **Opposite corner**: If the opponent is in the corner, the player plays the opposite corner.
 >7. **Empty corner**: The player plays in a corner square.
 >8. **Empty side**: The player plays in a middle square on any of the 4 sides.
+
+##Usage Scenario (player-first)
+
+1. Player Launches Game
+  1. Game board & Turn Counter Created
+  2. X chosen by Player
+  3. Player Turn
+2. Player Turn
+  1. Turn Counter increments
+  2. Player Choice logged on board
+  3. Check if won/draw
+  4. AI Turn
+3. AI Turn
+  2. Turn Counter increments
+  3. Board position sent to AI function
+  4. AI function calculates "Best" move
+  5. Move logged on board
+  6. Check if won/draw
+  7. Player Turn
+4. Check if Won/draw
+  1. If Win conditions met then player/AI wins and game over
+  2. If Turn Counter is equal to 9, game is a draw and game over
+
+
+*Same procedures follow if AI-first but in reverse order*
+
+##AI algorithm to determine "Best Move" Pseudocode
+
+1. **if** two in a row **and** third space open **then**  
+  **win** (place in third space)
+  
+  
+  
