@@ -56,8 +56,29 @@ Play the first possible move that you can
 
 ##AI algorithm to determine "Best Move" Pseudocode
 
-1. **if** two in a row **and** third space open **then**  
-  **win** (place in third space)
+1. **if** AI two in a row **and** third space open **then**  
+  ***win()*** (place in third space)
+
+2. **if** Player two in a row **and** third space open **then**  
+  ***block()*** (place in third space)
+
+3. **if** AI finds fork (Scan potential moves to see if any create forks) **then**  
+  ***fork()*** (place in space that creates fork)
+
+4. **if** AI finds opponent fork (See 3.)**then**  
+  ***block_fork()*** (place in space that blocks fork)
+
+5. **if** Center open **then**  
+  ***take_center*** (place center)
+
+6. **if** Opponent has corner **and** Opposite corner is free **then**  
+  ***take_opposite_corner*** (place in opposide corner)
+
+7. **if** Any Corner available **then**  
+  ***take_any_corner*** (place in any available corner)
+
+8. **if** Any Side Available **then**  
+  ***take_any_side*** (place in any available side)
   
   
   
