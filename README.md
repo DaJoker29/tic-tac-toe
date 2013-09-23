@@ -11,5 +11,5 @@ A simple Tic Tac Toe game with an unbeatable AI
 
 ##Deployment
 
-...Front-End: Custom Web Interface
-...Back-End: Javascript
++ Front-End: Custom Web Interface
++ Back-End: Javascript
