@@ -8,10 +8,32 @@
         <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
         <!--[if IE]>
-            <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+            <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <![endif]-->
     </head>
 
     <body>
+        <h1><?php echo TITLE; ?></h1>
+        <p><?php echo DESCRIPTION; ?></p>
+
+        <div>
+            <table id="gameboard">
+                <tr id="row1">
+                    <td class="square tokens-x"></a></td>
+                    <td class="square v"></td>
+                    <td class="square"></td>
+                </tr>
+                <tr id="row2">
+                    <td class="square h"></td>
+                    <td class="square h v tokens-o"></td>
+                    <td class="square h"></td>
+                </tr>
+                <tr id="row3">
+                    <td class="square"></td>
+                    <td class="square v"></td>
+                    <td class="square"></td>
+                </tr>
+            </table>
+        </div>
     </body>
 </html>
