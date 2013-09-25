@@ -67,6 +67,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+/* line 6, ../sass/partials/_base.scss */
+body {
+  font-family: monospace;
+}
+
 /* line 50, tokens/*.png */
 .tokens-sprite, .tokens-o, .tokens-x {
   background: url('/tic-tac-toe/images/tokens-sbe1089bf0d.png') no-repeat;
@@ -83,24 +88,42 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 11, ../sass/screen.scss */
+body {
+  text-align: center;
+  font-family: monospace;
+}
+
+/* line 16, ../sass/screen.scss */
+header {
+  margin: 1em 0;
+}
+
+/* line 20, ../sass/screen.scss */
+#title {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* line 27, ../sass/screen.scss */
 .square {
   width: 64px;
   height: 64px;
 }
 
-/* line 16, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 .v {
   border-left: 1px solid white;
   border-right: 1px solid white;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 39, ../sass/screen.scss */
 .h {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
 }
 
-/* line 30, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 #gameboard {
   background-color: black;
+  margin: auto;
 }

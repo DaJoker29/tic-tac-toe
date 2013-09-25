@@ -18,45 +18,20 @@
                 <td>None</td>
                 <td>
                     <dt>$turn</dt><dd>a zero-indexed counter for how many turns has elapsed.</dd>
+                    <dt>$move</dt><dd>0 or 1 to indicate whose move it currently is (player or AI)</dd>
                     <dt>$playToken</dt><dd>X or O, passed as argument upon launch</dd>
-                    <dt>$ariToken</dt><dd>X or O, the opposite for $playerToken</dd>
+                    <dt>$aiToken</dt><dd>X or O, the opposite for $playerToken</dd>
+                    <dt>$gameBoard</dt><dd>A nine element array used to represent the gameboard</dd>
+                    <dt>$final</dt><dd>0=incomplete, 1=win, 2=lose, 3=draw. The final status of the game. Determines the alert sent to the user after the game</dd>
                 </td>
                 <td>
-                    <dt>turn()</dt><dd>Increment the $turn property, checks if $turn=9, then calls end(draw)</dd>
-                    <dt>end()</dt><dd>Called with/without argument. If no argument, checks the gameboard for win, lose or draw. If passed argument or check returns something, sends to output and ends game.</dd>
+                    <p>General</p>
+                    <dt>redraw($gameBoard)</dt><dd>Displays the updated game board after each turn. Returns: void</dd>
+                    <dt>check($gameBoard)</dt><dd>Takes the current game board after each move and checks if final conditions (win or lose) have been met. If not, increments the turn counter and checks for draw. Returns: $final </dd>
+                    <dt>end($final)</dt><dd>Outputs win, lose or draw to the user and calls reset(). Returns: void</dd>
+                    <dt>reset()</dt><dd>Clears out all counters and flags. Returns: void</dd>
                 </td>
                 <td>Main object</td>
-            </tr>
-            <tr>
-                <td>Board</td>
-                <td>game</td>
-                <td>
-                </td>
-                <td></td>
-                <td>Object representing the gameboard output to the user</td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <th>Module</th>
-                <th>Input</th>
-                <th>Processing</th>
-                <th>Output</th>
-            </tr>
-            <tr>
-                <td>launch()</td>
-                <td>Number value (either 0 or 1, X or O respectively)</td>
-                <td>Start a new game with player assigned either x or o</td>
-                <td>New gameObject with (player) token either X or O</td>
-            </tr>
-            <tr>
-                <td>player.turn()</td>
-                <td>Player selection for their next move</td>
-                <td>Log playerMove to gameObject.board</td>
-                <td>Updated gameObject.board</td>
-            </tr>
-            <tr>
-                <td>ariadne.turn()</td>
             </tr>
         </table>
     </body>
