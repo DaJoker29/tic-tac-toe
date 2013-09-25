@@ -13,8 +13,10 @@
     </head>
 
     <body>
-        <h1><?php echo TITLE; ?></h1>
-        <p><?php echo DESCRIPTION; ?></p>
+        <header>
+            <h1 id="title"><?php echo TITLE; ?></h1>
+            <p id="description"><?php echo DESCRIPTION; ?></p>
+        </header>
 
         <div>
             <table id="gameboard">
