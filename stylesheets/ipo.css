@@ -63,6 +63,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+/* line 6, ../sass/partials/_base.scss */
+body {
+  font-family: monospace;
+}
+
 /* line 3, ../sass/ipo.scss */
 table {
   margin: 10px auto;
@@ -70,23 +75,31 @@ table {
   max-width: 90%;
   border: 1px solid black;
 }
-/* line 8, ../sass/ipo.scss */
+/* line 9, ../sass/ipo.scss */
 table th, table td {
   text-align: center;
   padding: 10px;
   border: 1px dashed black;
 }
 /* line 15, ../sass/ipo.scss */
-table td dt {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-/* line 20, ../sass/ipo.scss */
-table td dd {
-  padding-bottom: 10px;
+table td {
   text-align: justify;
 }
+/* line 18, ../sass/ipo.scss */
+table td dt {
+  font-weight: bold;
+}
+/* line 22, ../sass/ipo.scss */
+table td dd {
+  padding-bottom: 10px;
+}
 /* line 26, ../sass/ipo.scss */
+table td p {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 1.1em;
+}
+/* line 36, ../sass/ipo.scss */
 table th {
   background-color: black;
   color: white;
