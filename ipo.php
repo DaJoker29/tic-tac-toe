@@ -19,7 +19,8 @@
                 <td>
                     <dt>$turn</dt><dd>a zero-indexed counter for how many turns has elapsed.</dd>
                     <dt>$playToken</dt><dd>X or O, passed as argument upon launch</dd>
-                    <dt>$ariToken</dt><dd>X or O, the opposite for $playerToken</dd>
+                    <dt>$aiToken</dt><dd>X or O, the opposite for $playerToken</dd>
+                    <dt>$gameBoard</dt><dd>A nine element array used to represent the gameboard</dd>
                 </td>
                 <td>
                     <dt>turn()</dt><dd>Increment the $turn property, checks if $turn=9, then calls end(draw)</dd>
