@@ -1,94 +1,85 @@
-/* line 17, ../../../lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-}
+/*
+Syntax error: File to import not found or unreadable: partials/base.
+              Load paths:
+                /var/www/tic-tac-toe/sass
+                /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets
+                /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets
+                Compass::SpriteImporter
+        on line 1 of /var/www/tic-tac-toe/sass/ipo.scss
 
-/* line 22, ../../../lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
-}
+1: /var/www/tic-tac-toe/sass/ipo.scss
 
-/* line 24, ../../../lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 26, ../../../lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 28, ../../../lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 30, ../../../lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 103, ../../../lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 32, ../../../lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 116, ../../../lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block;
-}
-
-/* line 3, ../sass/ipo.scss */
-table {
-  margin: 10px auto;
-  padding: 10px;
-  max-width: 90%;
-  border: 1px solid black;
-}
-/* line 8, ../sass/ipo.scss */
-table th, table td {
-  text-align: center;
-  padding: 10px;
-  border: 1px dashed black;
-}
-/* line 15, ../sass/ipo.scss */
-table td dt {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-/* line 20, ../sass/ipo.scss */
-table td dd {
-  padding-bottom: 10px;
-  text-align: justify;
-}
-/* line 26, ../sass/ipo.scss */
-table th {
-  background-color: black;
-  color: white;
-  border: 1px dashed white;
-}
+Backtrace:
+/var/www/tic-tac-toe/sass/ipo.scss:1
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/import_node.rb:67:in `import'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/import_node.rb:28:in `imported_file'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/import_node.rb:37:in `css_import?'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/perform.rb:217:in `visit_import'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/perform.rb:100:in `visit'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/perform.rb:109:in `visit_children'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/perform.rb:121:in `with_environment'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/perform.rb:108:in `visit_children'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/perform.rb:128:in `visit_root'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/perform.rb:100:in `visit'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/tree/root_node.rb:20:in `render'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/engine.rb:315:in `_render'
+/var/lib/gems/1.8/gems/sass-3.2.10/lib/sass/../sass/engine.rb:262:in `render'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `compile'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `compile'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `run'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `run'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:95:in `perform'
+/var/lib/gems/1.8/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
+/var/lib/gems/1.8/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
+/var/lib/gems/1.8/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
+/var/lib/gems/1.8/gems/fssm-0.2.10/lib/fssm/path.rb:39:in `delete'
+/var/lib/gems/1.8/gems/fssm-0.2.10/lib/fssm/state/directory.rb:32:in `deleted'
+/var/lib/gems/1.8/gems/fssm-0.2.10/lib/fssm/state/directory.rb:31:in `each'
+/var/lib/gems/1.8/gems/fssm-0.2.10/lib/fssm/state/directory.rb:31:in `deleted'
+/var/lib/gems/1.8/gems/fssm-0.2.10/lib/fssm/state/directory.rb:16:in `refresh'
+/var/lib/gems/1.8/gems/fssm-0.2.10/lib/fssm/backends/inotify.rb:12:in `add_handler'
+/var/lib/gems/1.8/gems/rb-inotify-0.9.1/lib/rb-inotify/notifier.rb:205:in `call'
+/var/lib/gems/1.8/gems/rb-inotify-0.9.1/lib/rb-inotify/notifier.rb:205:in `watch'
+/var/lib/gems/1.8/gems/rb-inotify-0.9.1/lib/rb-inotify/watcher.rb:41:in `[]'
+/var/lib/gems/1.8/gems/rb-inotify-0.9.1/lib/rb-inotify/watcher.rb:41:in `callback!'
+/var/lib/gems/1.8/gems/rb-inotify-0.9.1/lib/rb-inotify/event.rb:128:in `callback!'
+/var/lib/gems/1.8/gems/rb-inotify-0.9.1/lib/rb-inotify/notifier.rb:238:in `process'
+/var/lib/gems/1.8/gems/rb-inotify-0.9.1/lib/rb-inotify/notifier.rb:238:in `each'
+/var/lib/gems/1.8/gems/rb-inotify-0.9.1/lib/rb-inotify/notifier.rb:238:in `process'
+/var/lib/gems/1.8/gems/rb-inotify-0.9.1/lib/rb-inotify/notifier.rb:221:in `run'
+/var/lib/gems/1.8/gems/fssm-0.2.10/lib/fssm/backends/inotify.rb:20:in `run'
+/var/lib/gems/1.8/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
+/var/lib/gems/1.8/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/var/lib/gems/1.8/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/var/lib/gems/1.8/gems/compass-0.12.2/bin/compass:30
+/var/lib/gems/1.8/gems/compass-0.12.2/bin/compass:44:in `call'
+/var/lib/gems/1.8/gems/compass-0.12.2/bin/compass:44
+/usr/local/bin/compass:23:in `load'
+/usr/local/bin/compass:23
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: partials/base.\A               Load paths:\A                 /var/www/tic-tac-toe/sass\A                 /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets\A                 /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets\A                 Compass::SpriteImporter\A         on line 1 of /var/www/tic-tac-toe/sass/ipo.scss\A \A 1: /var/www/tic-tac-toe/sass/ipo.scss"; }
