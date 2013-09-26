@@ -13,12 +13,12 @@
     </head>
 
     <body>
-        <header>
-            <h1 id="title"><?php echo TITLE; ?></h1>
-            <p id="description"><?php echo DESCRIPTION; ?></p>
-        </header>
+        <div id="main">
+            <header>
+                <h1 id="title"><?php echo TITLE; ?></h1>
+                <p id="description"><?php echo DESCRIPTION; ?></p>
+            </header>
 
-        <div>
             <table id="gameboard">
                 <tr id="row1">
                     <td class="square tokens-x"></a></td>
