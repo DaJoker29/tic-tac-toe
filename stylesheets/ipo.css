@@ -98,17 +98,22 @@ table td:nth-child(even) {
 table td dt {
   font-weight: bold;
 }
-/* line 35, ../sass/ipo.scss */
+/* line 33, ../sass/ipo.scss */
+table td dt .args {
+  font-style: italic;
+  color: #667f66;
+}
+/* line 39, ../sass/ipo.scss */
 table td dd {
   padding-bottom: 10px;
 }
-/* line 39, ../sass/ipo.scss */
+/* line 43, ../sass/ipo.scss */
 table td p {
   text-align: center;
   text-decoration: underline;
   font-size: 1.1em;
 }
-/* line 49, ../sass/ipo.scss */
+/* line 53, ../sass/ipo.scss */
 table th {
   background-color: #667f66;
 }
