@@ -87,42 +87,59 @@ body {
   background-position: 0 -64px;
 }
 
-/* line 11, ../sass/screen.scss */
+/* line 12, ../sass/screen.scss */
 body {
   text-align: center;
   font-family: monospace;
 }
 
-/* line 16, ../sass/screen.scss */
+/* line 17, ../sass/screen.scss */
+#main {
+  background-color: #cfc;
+  margin: auto;
+  width: 700px;
+  height: 1000px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  padding: 20px 0;
+}
+
+/* line 27, ../sass/screen.scss */
 header {
   margin: 1em 0;
 }
 
-/* line 20, ../sass/screen.scss */
+/* line 31, ../sass/screen.scss */
 #title {
   font-size: 1.4em;
   font-weight: bold;
 }
 
-/* line 27, ../sass/screen.scss */
+/* line 38, ../sass/screen.scss */
 .square {
   width: 64px;
   height: 64px;
 }
 
-/* line 32, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 .v {
   border-left: 1px solid white;
   border-right: 1px solid white;
 }
 
-/* line 39, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 .h {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 #gameboard {
   background-color: black;
   margin: auto;
