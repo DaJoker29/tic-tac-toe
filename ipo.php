@@ -26,13 +26,20 @@
                 </td>
                 <td>
                     <p>General</p>
-                    <dt>redraw <span class="args">($gameBoard, $move)</span></dt><dd>Displays the updated game board after each turn. Returns: void</dd>
-                    <dt>check <span class="args">($gameBoard)</span></dt><dd>Takes the current game board after each move and checks if final conditions (win or lose) have been met. If not, increments the turn counter and checks for draw. Returns: $final </dd>
-                    <dt>end <span class="args">($final)</span></dt><dd>Outputs win, lose or draw to the user and calls reset(). Returns: void</dd>
-                    <dt>reset <span class="args">()</span></dt><dd>Clears out all counters and flags. Returns: void</dd>
+                        <dt>redraw <span class="args">($gameBoard, $move)</span></dt><dd>Displays the updated game board after each turn. Returns: void</dd>
+                        <dt>check <span class="args">($gameBoard)</span></dt><dd>Takes the current game board after each move and checks if final conditions (win or lose) have been met. If not, increments the turn counter and checks for draw. Returns: $final </dd>
+                        <dt>end <span class="args">($final)</span></dt><dd>Outputs win, lose or draw to the user and calls reset(). Returns: void</dd>
+                        <dt>reset <span class="args">()</span></dt><dd>Clears out all counters and flags. Returns: void</dd>
                     <p>AI</p>
-                    <dt>move<span class="args">($gameBoard)</span></dt><dd>Runs the functions that determine which move for the AI to make. Returns: void</dd>
-                    <dt>win <span class="args">($gameBoard)</span></dt><dd>Places a third aiToken in any row with two already, winning the game. Returns: 0 or 1 (Success or Failure).</dd>
+                        <dt>move<span class="args">($gameBoard)</span></dt><dd>Runs the functions that determine which move for the AI to make. Returns: void</dd>
+                        <dt>win <span class="args">($gameBoard)</span></dt><dd>Places a third aiToken in any row with two already, winning the game. Returns: 0 or 1 (Success or Failure).</dd>
+                        <dt>block <span class="args">($gameBoard)</span></dt><dd>Places a third aiToken in any row with two playTokens already in it. Returns: 0 or 1 (Success or Failure).</dd>
+                        <dt>fork <span class="args">($gameBoard)</span></dt><dd>Determines if an AI fork is possible and creates it. Returns: 0 or 1</dd>
+                        <dt>blockFork <span class="args">($gameBoard)</span></dt><dd>Determines if a player fork is possible and blocks it. Returns: 0 or 1</dd>
+                        <dt>center <span class="args">($gameBoard)</span></dt><dd>Places aiToken in the center if it is available. Returns: 0 or 1</dd>
+                        <dt>oppCorner <span class="args">($gameBoard)</span</dt><dd>Places aiToken in any corner opposite a play token. Returns: 0 or 1</dd>
+                        <dt>corner <span class="args">($gameBoard)</span></dt><dd>Places aiToken in any availabe corner. Returns: 0 or 1</dd>
+                        <dt>side <span class="args">($gameBoard)</span></dt><dd>Places aiToken in any available side space. Returns: 0 or 1</dd>
                 </td>
                 <td>Main object</td>
             </tr>
