@@ -79,41 +79,42 @@ table {
 /* line 15, ../sass/ipo.scss */
 table th, table td {
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #ccffcc;
+  vertical-align: baseline;
 }
-/* line 21, ../sass/ipo.scss */
+/* line 22, ../sass/ipo.scss */
 table td {
-  text-align: justify;
+  text-align: left;
 }
-/* line 24, ../sass/ipo.scss */
+/* line 25, ../sass/ipo.scss */
 table td:nth-child(odd) {
   background-color: #475847;
 }
-/* line 27, ../sass/ipo.scss */
+/* line 28, ../sass/ipo.scss */
 table td:nth-child(even) {
   background-color: #313d31;
 }
-/* line 31, ../sass/ipo.scss */
+/* line 32, ../sass/ipo.scss */
 table td dt {
   font-weight: bold;
 }
-/* line 33, ../sass/ipo.scss */
+/* line 34, ../sass/ipo.scss */
 table td dt .args {
   font-style: italic;
   color: #667f66;
 }
-/* line 39, ../sass/ipo.scss */
+/* line 40, ../sass/ipo.scss */
 table td dd {
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
-/* line 43, ../sass/ipo.scss */
+/* line 44, ../sass/ipo.scss */
 table td p {
   text-align: center;
   text-decoration: underline;
   font-size: 1.1em;
 }
-/* line 53, ../sass/ipo.scss */
+/* line 54, ../sass/ipo.scss */
 table th {
   background-color: #667f66;
 }
