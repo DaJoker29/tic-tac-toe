@@ -32,10 +32,17 @@
                     <dt>$gameBoard</dt>
                     <dd>A nine element array used to represent the gameboard</dd>
 
+                    <dt>$position</dt>
+                    <dd>A value between 0 and 8 to represent the player/AI choice on the board</dd>
+
                     <dt>$final</dt>
                     <dd>0=incomplete, 1=win, 2=lose, 3=draw. The final status of the game. Determines the alert sent to the user after the game</dd>
                 </td>
                 <td>
+                    <dt>opposite <span class="args">($move)</span></dt>
+                    <dd>Takes the $move selected by the user and returns the opposite. Returns: X or O</dd>
+                    <dt>record <span class="args">($gameBoard, $move, $position)</span></dt>
+                    <dd>Logs the move (player or AI) to the board. Returns: void</dd>
                     <dt>redraw <span class="args">($gameBoard, $move)</span></dt>
                     <dd>Displays the updated game board after each turn. Returns: void</dd>
 
