@@ -3,6 +3,14 @@ tic-tac-toe
 
 A simple Tic Tac Toe game with an unbeatable AI
 
+##To-do
+
+1. Split business code and interface 
+2. Refactor code
+    1. Object-Oriented
+3. Rebuild interface
+4. Combine (driver and interface)
+
 ##Requirements
 
 * Player will start the game, choosing to go first (X) or second (O).
@@ -79,6 +87,4 @@ Play the first possible move that you can
 
 8. **if** Any Side Available **then**  
   ***take_any_side*** (place in any available side)
-  
-  
-  
+
