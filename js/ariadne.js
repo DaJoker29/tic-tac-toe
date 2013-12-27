@@ -5,13 +5,6 @@ Featured on JavaScript Kit (http://javascriptkit.com)
 For this and over 400+ free scripts, visit http://javascriptkit.com
 */
 
-//if IE4/NS6, apply style
-if (document.all||document.getElementById) {
-        document.write('<style>.tictac{');
-        document.write('width:50px;height:50px;');
-        document.write('}</style>');
-}
-
 var sqr1;
 var sqr2;
 var sqr3;
