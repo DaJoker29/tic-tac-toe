@@ -4,7 +4,7 @@ Testers: Cory Fogliani, Chris Gordon
 Featured on JavaScript Kit (http://javascriptkit.com);
 For this and over 400+ free scripts, visit http://javascriptkit.com
 */
-
+/*  Variable Declarations   */
 var sqr1;
 var sqr2;
 var sqr3;
@@ -27,6 +27,7 @@ var moveCount = 0;
 var turn = 0;
 var mode = 1;
 
+/*  Sets local variables to match gameboard */
 function vari() {
     sqr1 = document.tic.sqr1.value;
     sqr2 = document.tic.sqr2.value;
@@ -39,6 +40,8 @@ function vari() {
     sqr9 = document.tic.sqr9.value;
 }
 
+/*  Starts checks by seeing if player has won then alerting and reseting.
+    Otherwise, it launches other checks.*/
 function check() {
     if(sqr1 == " X " && sqr2 == " X " && sqr3 == " X ") {
         alert("You Win!");
@@ -83,6 +86,8 @@ function check() {
     } 
 }
 
+/*  Updates gameboard, calls drawCheck and then checks for loss.
+    If loss then alerts and resets. */
 function check2() {
     vari();
     drawCheck();
@@ -124,6 +129,7 @@ function check2() {
     }
 }
 
+/*  2Player functionality: Checks if Player1 wins   */
 function player1Check() {
     if(sqr1 == " X " && sqr2 == " X " && sqr3 == " X ") {
         alert("Player 1 wins!");
@@ -167,6 +173,7 @@ function player1Check() {
     } 
 }
 
+/** 2Player functionality: Checks if Player 2 wins  */
 function player2Check() {
     vari();
     drawCheck();
@@ -208,6 +215,7 @@ function player2Check() {
     }
 }
 
+/** Updates board, if moveCounter = 9 then alert Draw and reset */
 function drawCheck() {
     vari();
     moveCount = sqr1T + sqr2T + sqr3T + sqr4T + sqr5T + sqr6T + sqr7T + sqr8T + sqr9T;
@@ -217,6 +225,8 @@ function drawCheck() {
     }
 }
 
+/** calls check2 (check for computer loss) and then checks for any opportunitys to win.
+    If no win, it calls computer()*/
 function winCheck() {
     check2();
     if(sqr1 == " O " && sqr2 == " O " && sqr3T == 0 && turn == 1) {
@@ -349,6 +359,8 @@ function winCheck() {
     }
     check2();
 }
+
+/** Calls check2(). Checks for opportunity to block player. Calls AI(). */ 
 function computer() {
     check2();
     if(sqr1 == " X " && sqr2 == " X " && sqr3T == 0 && turn == 1) {
@@ -482,6 +494,8 @@ function computer() {
     check2();
 }
 
+/** Updates board and goes with best move available (win and block have already been
+    excluded)   */
 function AI() {
     vari();
     if(document.tic.sqr5.value == "         " && turn == 1) {
@@ -532,6 +546,7 @@ function AI() {
     check2();
 }
 
+/** Sets all values to blank, resets all counters and updates board */
 function reset() {
     document.tic.sqr1.value = "         ";
     document.tic.sqr2.value = "         ";
@@ -556,6 +571,7 @@ function reset() {
     moveCount = 0;
 }
 
+/** Calls reset */
 function resetter() {
     reset();
 }
