@@ -1,11 +1,44 @@
-/*
+/*  
+Original Credits
 Code Written by Cory Fogliani (Email: cory@ijustdontcare.com);
 Testers: Cory Fogliani, Chris Gordon
 Featured on JavaScript Kit (http://javascriptkit.com);
 For this and over 400+ free scripts, visit http://javascriptkit.com
 */
+
+
+/*
+Ariadne Credits
+Code Written by Dewitt Buckingham (Email: dajoker29@gmail.com)
+*/
+
+/**
+
+    Refactoring Notes
+
+    Classes/Objects:
+
+        Game -- Store and updates all current game state 
+
+            Properties:
+                array board[9]  -- Index relates to specific square on grid. {X, O or null}
+                string p1       -- Player 1 token {X}
+                string p2       -- Player 2 token {O}
+                int turn        -- Indicate whether player or AI turn {0 for player, 1 for Ariadne}
+                int moves       -- Number of moves played {1-9}
+                int status      -- Status of game {win, lose, draw, continue}
+
+            Methods:
+                __construct()   -- Initializes variables
+                move()          -- Passes player move into gameboard. CB: checks()
+                checks()        -- Run checks and returns win, lose, draw,or continue CB: end()
+                end()           -- Checks status and turn to determine how to proceed. CB: ariadne(), move() or gameover()
+                ariadne()       -- Determines and plays next move based on current board. CB: checks()
+                gameover()      -- Resets all variables, prints win/lose/draw message
+
+**/
 /*  Variable Declarations   */
-var sqr1;
+var sqr1; //Convert to array. Holds value of stored tokens or blank
 var sqr2;
 var sqr3;
 var sqr4;
@@ -14,7 +47,7 @@ var sqr6;
 var sqr7;
 var sqr8;
 var sqr9;
-var sqr1T = 0;
+var sqr1T = 0; //Convert to array. Shows which squares have tokens
 var sqr2T = 0;
 var sqr3T = 0;
 var sqr4T = 0;
@@ -23,9 +56,9 @@ var sqr6T = 0;
 var sqr7T = 0;
 var sqr8T = 0;
 var sqr9T = 0;
-var moveCount = 0;
-var turn = 0;
-var mode = 1;
+var moveCount = 0; //Number of moves played in current game
+var turn = 0; //Determines whose turn (0 = player 1, 1 = player 2 (AI))
+var mode = 1; //Determines 1 or 2 player mode
 
 /*  Update Gameboard*/
 function vari() {
@@ -82,7 +115,7 @@ function check() {
     else {
         winCheck();
         check2();
-        drawCheck(); 
+        drawCheck(); //Redundant. check2 runs drawCheck.
     } 
 }
 
