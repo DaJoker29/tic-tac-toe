@@ -12,31 +12,6 @@ Ariadne Credits
 Code Written by Dewitt Buckingham (Email: dajoker29@gmail.com)
 */
 
-/**
-
-    Refactoring Notes
-
-    Classes/Objects:
-
-        Game -- Store and updates all current game state 
-
-            Properties:
-                array board[9]  -- Index relates to specific square on grid. {X, O or null}
-                string p1       -- Player 1 token {X}
-                string p2       -- Player 2 token {O}
-                int turn        -- Indicate whether player or AI turn {0 for player, 1 for Ariadne}
-                int moves       -- Number of moves played {1-9}
-                int status      -- Status of game {win, lose, draw, continue}
-
-            Methods:
-                __construct()   -- Initializes variables
-                move()          -- Passes player move into gameboard. CB: checks()
-                checks()        -- Run checks and returns win, lose, draw,or continue CB: end()
-                end()           -- Checks status and turn to determine how to proceed. CB: ariadne(), move() or gameover()
-                ariadne()       -- Determines and plays next move based on current board. CB: checks()
-                gameover()      -- Resets all variables, prints win/lose/draw message
-
-**/
 /*  Variable Declarations   */
 var sqr1; //Convert to array. Holds value of stored tokens or blank
 var sqr2;
@@ -60,7 +35,8 @@ var moveCount = 0; //Number of moves played in current game
 var turn = 0; //Determines whose turn (0 = player 1, 1 = player 2 (AI))
 var mode = 1; //Determines 1 or 2 player mode
 
-/*  Update Gameboard*/
+/*  Update Gameboard
+    Refactoring into __construct*/
 function vari() {
     sqr1 = document.tic.sqr1.value;
     sqr2 = document.tic.sqr2.value;
@@ -74,7 +50,8 @@ function vari() {
 }
 
 /*  Check for player win. If true, alert and reset.
-    Else launch other checks*/
+    Else launch other checks
+    Refactoring into checks()*/
 function check() {
     if(sqr1 == " X " && sqr2 == " X " && sqr3 == " X ") {
         alert("You Win!");
@@ -119,7 +96,8 @@ function check() {
     } 
 }
 
-/*  Check for player loss. If true, alert and reset */
+/*  Check for player loss. If true, alert and reset.
+    Refactoring into checks()*/
 function check2() {
     vari();
     drawCheck();
@@ -161,7 +139,8 @@ function check2() {
     }
 }
 
-/*  2Player functionality: Check if Player1 wins   */
+/*  2Player functionality: Check if Player1 wins  
+    Unnecessary*/
 function player1Check() {
     if(sqr1 == " X " && sqr2 == " X " && sqr3 == " X ") {
         alert("Player 1 wins!");
@@ -205,7 +184,8 @@ function player1Check() {
     } 
 }
 
-/** 2Player functionality: Checks if Player 2 wins  */
+/** 2Player functionality: Checks if Player 2 wins 
+    Unnecessary*/
 function player2Check() {
     vari();
     drawCheck();
@@ -247,7 +227,8 @@ function player2Check() {
     }
 }
 
-/** Check for turnCount = 9 (draw). If true, alert and reset*/
+/** Check for turnCount = 9 (draw). If true, alert and reset.
+    Refactoring into checks()*/
 function drawCheck() {
     vari();
     moveCount = sqr1T + sqr2T + sqr3T + sqr4T + sqr5T + sqr6T + sqr7T + sqr8T + sqr9T;
@@ -257,7 +238,8 @@ function drawCheck() {
     }
 }
 
-/** Check for win opportunity. If true, plays move. */
+/** Check for win opportunity. If true, plays move. 
+    Refactoring into ariadne()*/
 function winCheck() {
     check2();
     if(sqr1 == " O " && sqr2 == " O " && sqr3T == 0 && turn == 1) {
@@ -391,7 +373,8 @@ function winCheck() {
     check2();
 }
 
-/** Check for block opportunity. If true, plays move. */ 
+/** Check for block opportunity. If true, plays move.  
+    Refactoring into ariadne()*/ 
 function computer() {
     check2();
     if(sqr1 == " X " && sqr2 == " X " && sqr3T == 0 && turn == 1) {
@@ -525,7 +508,8 @@ function computer() {
     check2();
 }
 
-/** Plays next available priority (after win and block)*/
+/** Plays next available priority (after win and block) 
+    Refactoring into ariadne()*/
 function AI() {
     vari();
     if(document.tic.sqr5.value == "         " && turn == 1) {
@@ -576,7 +560,8 @@ function AI() {
     check2();
 }
 
-/** Reset values and gameboard */
+/** Reset values and gameboard  
+    Refactoring into gameover()*/
 function reset() {
     document.tic.sqr1.value = "         ";
     document.tic.sqr2.value = "         ";
@@ -601,7 +586,8 @@ function reset() {
     moveCount = 0;
 }
 
-/** Call reset */
+/** Call reset 
+    Unnecessary*/
 function resetter() {
     reset();
 }

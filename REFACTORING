@@ -1,0 +1,101 @@
+
+Refactoring Notes
+
+Classes/Objects:
+
+    Game -- Main object which runs the game
+
+        Input: 
+            int player      -- Represents the User's square choice {integer 1-9)
+
+        Output:
+            int ariadne      -- Represents Ariadne's choice {integer 1-9}
+
+        Properties:
+            array board[9]  -- Index relates to specific square on grid. {X, O or null}
+            string p1       -- Player 1 token {X}
+            string p2       -- Player 2 token {O}
+            int turn        -- Indicate whether player or AI turn {0 for player, 1 for Ariadne}
+            int moves       -- Number of moves played {1-9}
+            int status      -- Status of game {0 = continue, 1 = win, 2 = loss, 3 = draw}
+
+        Methods:
+            __construct()   -- Initializes variables
+            move()          -- Passes player move into gameboard. CB: checks()
+            checks()        -- Run checks and returns win, lose, draw,or continue CB: next()
+            winCheck        -- Checks for Player win
+            lossCheck       -- Checks for Player loss
+            drawCheck       -- Checks for draw
+            next()          -- Checks status and turn to determine how to proceed. CB: ariadne(), move() or gameover()
+            ariadne()       -- Determines and plays next move based on current board. CB: checks()
+            gameover()      -- Resets all variables, prints win/lose/draw message
+
+
+Pseudo-Code:
+
+class Game() {
+
+    __construct() {
+        array board[9] = null
+        string p1 = "X"
+        string p2 = "O"
+        int turn = 0
+        int moves = 0
+        int status = 0
+    }
+
+    move(int sqr, callback checks()) {
+        if(isInt(sqr) && 1 <= sqr && 9 >= sqr)
+            board[sqr] = p1
+        else
+            throw NaN error
+            (get new value from user)
+    }
+
+    checks(callback next(status)) {
+        moves++
+        if(winCheck())
+            status = 1
+        else if (lossCheck())
+            status = 2
+        else if (drawCheck())
+            status = 3
+        else
+            status = 0
+
+    }
+
+    winCheck()
+
+    lossCheck()
+
+    drawCheck()
+
+    next(callback nextCall) {
+        if(status == 0) {
+            if(turn == 0) {
+                nextCall = ariadne()
+                turn = 1
+            }
+            else {
+                nextCall = move()
+                turn = 0
+            }
+        }
+        else {
+            nextCall = gameover(status)
+        }
+    }
+
+    ariadne()
+
+    gameover() {
+        if(status == 1) 
+            print("You win")
+        else if(status == 2) 
+            print("You lose")
+        else if(status == 3) 
+            print("Draw")
+        (reset gameboard: Constructor or method?)
+    }
+}
