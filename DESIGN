@@ -23,9 +23,11 @@ Classes/Objects:
             __construct()   -- Initializes variables
             move()          -- Passes player move into gameboard. CB: checks()
             checks()        -- Run checks and returns win, lose, draw,or continue CB: next()
-            winCheck        -- Checks for Player win
-            lossCheck       -- Checks for Player loss
-            drawCheck       -- Checks for draw
+            check3()        -- Checks for three successive tokens on the board
+            check2()        -- Checks for two successive tokens on the board
+            winCheck()      -- Checks for Player win
+            lossCheck()     -- Checks for Player loss
+            drawCheck()     -- Checks for draw
             next()          -- Checks status and turn to determine how to proceed. CB: ariadne(), move() or gameover()
             ariadne()       -- Determines and plays next move based on current board. CB: checks()
             gameover()      -- Resets all variables, prints win/lose/draw message
@@ -54,22 +56,43 @@ class Game() {
 
     checks(callback next(status)) {
         moves++
-        if(winCheck())
-            status = 1
-        else if (lossCheck())
-            status = 2
+        if(check3(p1)
+            status = 1 //Win
+        else if (check3(p2))
+            status = 2  //Lose
         else if (drawCheck())
-            status = 3
+            status = 3 //Draw
         else
-            status = 0
-
+            status = 0 //Continue
     }
 
-    winCheck()
+    check3(char token) {
+        //Combinations that result in three successive tokens
+        array local combos[8][3] = [
+            [ 1, 2, 3],
+            [ 4, 5, 6],
+            [ 7, 8, 9],
+            [ 1, 5, 9],
+            [ 3, 5, 7],
+            [ 1, 4, 7],
+            [ 2, 5, 8],
+            [ 3, 6, 9]
+        ]
 
-    lossCheck()
+        for (x = 0; x < length(combos); x++) {
+            if (combos[x][0] == token AND combos[x][1] == token AND combos[x][2] == token)
+                return 0
+        }
 
-    drawCheck()
+        return 1
+    }
+
+    drawCheck() {
+        if(moves == 9)
+            return 0
+        else
+            return 1
+    }
 
     next(callback nextCall) {
         if(status == 0) {
@@ -87,7 +110,46 @@ class Game() {
         }
     }
 
-    ariadne()
+    check2(char token) {
+        array local combos[8][3] = [
+            [ 1, 2, 3],
+            [ 4, 5, 6],
+            [ 7, 8, 9],
+            [ 1, 5, 9],
+            [ 3, 5, 7],
+            [ 1, 4, 7],
+            [ 2, 5, 8],
+            [ 3, 6, 9]
+        ]
+
+        for(x = 0; x < length(combos); x++) {
+            for(y=0; x < length(combos[x])); y++) {
+                if(combos[x][1] == null && combos[x][1] == token && combos[x][2] == token) {
+                    combos[x][1] = p2
+                    return 0
+                else
+                    unshift(pop(combos[x]))
+            }
+        }
+    }
+
+    ariadne() {
+        //Go for Win
+        check2(p2)
+        //Go for block
+        check2(p1)
+        //Go for fork
+        
+        //Go for fork block
+
+        //Go for center
+
+        //Go for opposite corner
+
+        //Go for empty corner
+
+        //Go for empty side
+    }
 
     gameover() {
         if(status == 1) 
