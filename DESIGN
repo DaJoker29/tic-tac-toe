@@ -152,12 +152,16 @@ class Game() {
     }
 
     gameover() {
-        if(status == 1) 
-            print("You win")
-        else if(status == 2) 
-            print("You lose")
-        else if(status == 3) 
-            print("Draw")
+        switch(status) {
+            case 1:
+                print("You win!")
+            case 2:
+                print("You lose!")
+            case 3:
+                print("Draw, sucka!")
+            default:
+                throw error
+        }
         (reset gameboard: Constructor or method?)
     }
 }
