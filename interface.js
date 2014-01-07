@@ -21,7 +21,15 @@ function drawBoard(board) {
 drawBoard(board);
 rl.question('\nWhat space would you like? ', function (answer) {
     board[answer -1] = 'X';
-    rl.close();
     drawBoard(board);
+
+    rl.close;
+    if(board[4] == 5) {
+        board[4] = 'O';
+    }
+    else
+        board[0] = 'O';
+    drawBoard(board);
+
 });
 
