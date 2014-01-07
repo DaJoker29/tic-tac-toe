@@ -5,19 +5,14 @@ Classes/Objects:
 
     Game -- Main object which runs the game
 
-        Input: 
-            int player      -- Represents the User's square choice {integer 1-9)
-
-        Output:
-            int ariadne      -- Represents Ariadne's choice {integer 1-9}
-
         Properties:
-            array board[9]  -- Index relates to specific square on grid. {X, O or null}
-            string p1       -- Player 1 token {X}
-            string p2       -- Player 2 token {O}
-            int turn        -- Indicate whether player or AI turn {0 for player, 1 for Ariadne}
-            int moves       -- Number of moves played {1-9}
-            int status      -- Status of game {0 = continue, 1 = win, 2 = loss, 3 = draw}
+            board[9]    -- Index relates to specific square on grid. {X, O or null}
+            p1          -- Player 1 token {X}
+            p2          -- Player 2 token {O}
+            turn        -- Indicate whether player or AI turn {0 for player, 1 for Ariadne}
+            moves       -- Number of moves played {1-9}
+            status      -- Status of game {0 = continue, 1 = win, 2 = loss, 3 = draw}
+            winCombos   -- Array of winning combinations
 
         Methods:
             __construct()   -- Initializes variables
@@ -32,7 +27,6 @@ Classes/Objects:
             ariadne()       -- Determines and plays next move based on current board. CB: checks()
             gameover()      -- Resets all variables, prints win/lose/draw message
 
-
 Pseudo-Code:
 
 class Game() {
@@ -44,14 +38,25 @@ class Game() {
         int turn = 0
         int moves = 0
         int status = 0
+        array local combos[8][3] = [
+            [ 1, 2, 3], //Horizontal
+            [ 4, 5, 6],
+            [ 7, 8, 9],
+            [ 1, 5, 9], //Diagonal
+            [ 3, 5, 7],
+            [ 1, 4, 7], //Vertical
+            [ 2, 5, 8],
+            [ 3, 6, 9]
+        ]
     }
 
-    move(int sqr, callback checks()) {
-        if(isInt(sqr) && 1 <= sqr && 9 >= sqr)
+    move(sqr,checks()) {
+        if(isInt(sqr) && 1 <= sqr && 9 >= sqr) {
             board[sqr] = p1
-        else
+        } else {
             throw NaN error
             (get new value from user)
+        }
     }
 
     checks(callback next(status)) {
@@ -110,7 +115,7 @@ class Game() {
         }
     }
 
-    check2(char token) {
+    check2(token) {
         array local combos[8][3] = [
             [ 1, 2, 3],
             [ 4, 5, 6],
@@ -124,7 +129,7 @@ class Game() {
 
         for(x = 0; x < length(combos); x++) {
             for(y=0; x < length(combos[x])); y++) {
-                if(combos[x][1] == null && combos[x][1] == token && combos[x][2] == token) {
+                if(combos[x][0] == null && combos[x][1] == token && combos[x][2] == token) {
                     combos[x][1] = p2
                     return 0
                 else
@@ -134,10 +139,10 @@ class Game() {
     }
 
     ariadne() {
-        //Go for Win
-        check2(p2)
-        //Go for block
-        check2(p1)
+        if (check2(p2)) //Check for winning move
+            return
+        else if (check2(p1)) //Check for losing move
+            return
         //Go for fork
         
         //Go for fork block
