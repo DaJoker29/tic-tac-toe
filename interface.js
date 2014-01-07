@@ -1,35 +1,35 @@
 var readline = require('readline');
 
-var rl= readline.createInterface({
+var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-var board = [ 1, 2, 3, 4, 5, 6, 7, 8 ,9];
+var board = [ 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-function drawBoard(board) {
-    var lines = "";
-    for(i = 0; i < 9; i++) {
-        if(i % 3 == 0)
-            lines += ("\n");
-        lines += "  ";
-        lines += board[i];
+var IO = {
+    getUser: function (board) {
+        this.drawBoard(board);
+        rl.question('\nWhat space would you like? ', function (answer) {
+            board[answer - 1] = 'X';
+            rl.close;
+        });
+    },
+
+    //getAri:
+
+    drawBoard: function (board) {
+        var lines = "";
+        for(i = 0; i < board.length; i++) { //Find a way to recognize length
+            if(i % 3 == 0)
+                lines += ("\n");
+            lines += "  ";
+            lines += board[i];
+        }
+        console.log(lines);
     }
-    console.log(lines);
 }
 
-drawBoard(board);
-rl.question('\nWhat space would you like? ', function (answer) {
-    board[answer -1] = 'X';
-    drawBoard(board);
 
-    rl.close;
-    if(board[4] == 5) {
-        board[4] = 'O';
-    }
-    else
-        board[0] = 'O';
-    drawBoard(board);
-
-});
-
+//Need to figure out how to make this work with callbacks
+IO.getUser(board, IO.drawBoard());
