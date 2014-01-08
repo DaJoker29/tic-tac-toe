@@ -1,0 +1,172 @@
+
+Refactoring Notes
+
+Classes/Objects:
+
+    Game -- Main object which runs the game
+
+        Properties:
+            board[9]    -- Index relates to specific square on grid. {X, O or null}
+            p1          -- Player 1 token {X}
+            p2          -- Player 2 token {O}
+            turn        -- Indicate whether player or AI turn {0 for player, 1 for Ariadne}
+            moves       -- Number of moves played {1-9}
+            status      -- Status of game {0 = continue, 1 = win, 2 = loss, 3 = draw}
+            winCombos   -- Array of winning combinations
+
+        Methods:
+            __construct()   -- Initializes variables
+            move()          -- Passes player move into gameboard. CB: checks()
+            checks()        -- Run checks and returns win, lose, draw,or continue CB: next()
+            check3()        -- Checks for three successive tokens on the board
+            check2()        -- Checks for two successive tokens on the board
+            winCheck()      -- Checks for Player win
+            lossCheck()     -- Checks for Player loss
+            drawCheck()     -- Checks for draw
+            next()          -- Checks status and turn to determine how to proceed. CB: ariadne(), move() or gameover()
+            ariadne()       -- Determines and plays next move based on current board. CB: checks()
+            gameover()      -- Resets all variables, prints win/lose/draw message
+
+Pseudo-Code:
+
+class Game() {
+
+    __construct() {
+        array board[9] = null
+        string p1 = "X"
+        string p2 = "O"
+        int turn = 0
+        int moves = 0
+        int status = 0
+        array local combos[8][3] = [
+            [ 1, 2, 3], //Horizontal
+            [ 4, 5, 6],
+            [ 7, 8, 9],
+            [ 1, 5, 9], //Diagonal
+            [ 3, 5, 7],
+            [ 1, 4, 7], //Vertical
+            [ 2, 5, 8],
+            [ 3, 6, 9]
+        ]
+    }
+
+    move(sqr,checks()) {
+        if(isInt(sqr) && 1 <= sqr && 9 >= sqr) {
+            board[sqr] = p1
+        } else {
+            throw NaN error
+            (get new value from user)
+        }
+    }
+
+    checks(callback next(status)) {
+        moves++
+        if(check3(p1)
+            status = 1 //Win
+        else if (check3(p2))
+            status = 2  //Lose
+        else if (drawCheck())
+            status = 3 //Draw
+        else
+            status = 0 //Continue
+    }
+
+    check3(char token) {
+        //Combinations that result in three successive tokens
+        array local combos[8][3] = [
+            [ 1, 2, 3],
+            [ 4, 5, 6],
+            [ 7, 8, 9],
+            [ 1, 5, 9],
+            [ 3, 5, 7],
+            [ 1, 4, 7],
+            [ 2, 5, 8],
+            [ 3, 6, 9]
+        ]
+
+        for (x = 0; x < length(combos); x++) {
+            if (combos[x][0] == token AND combos[x][1] == token AND combos[x][2] == token)
+                return 0
+        }
+
+        return 1
+    }
+
+    drawCheck() {
+        if(moves == 9)
+            return 0
+        else
+            return 1
+    }
+
+    next(callback nextCall) {
+        if(status == 0) {
+            if(turn == 0) {
+                nextCall = ariadne()
+                turn = 1
+            }
+            else {
+                nextCall = move()
+                turn = 0
+            }
+        }
+        else {
+            nextCall = gameover(status)
+        }
+    }
+
+    check2(token) {
+        array local combos[8][3] = [
+            [ 1, 2, 3],
+            [ 4, 5, 6],
+            [ 7, 8, 9],
+            [ 1, 5, 9],
+            [ 3, 5, 7],
+            [ 1, 4, 7],
+            [ 2, 5, 8],
+            [ 3, 6, 9]
+        ]
+
+        for(x = 0; x < length(combos); x++) {
+            for(y=0; x < length(combos[x])); y++) {
+                if(combos[x][0] == null && combos[x][1] == token && combos[x][2] == token) {
+                    combos[x][1] = p2
+                    return 0
+                else
+                    unshift(pop(combos[x]))
+            }
+        }
+    }
+
+    ariadne() {
+        if (check2(p2)) //Check for winning move
+            return
+        else if (check2(p1)) //Check for losing move
+            return
+        //Go for fork
+        
+        //Go for fork block
+
+        //Go for center
+
+        //Go for opposite corner
+
+        //Go for empty corner
+
+        //Go for empty side
+    }
+
+    gameover() {
+        switch(status) {
+            case 1:
+                print("You win!")
+            case 2:
+                print("You lose!")
+            case 3:
+                print("Draw, sucka!")
+            default:
+                throw error
+        }
+        (reset gameboard: Constructor or method?)
+    }
+}
